@@ -50,7 +50,7 @@ const BillChart = () => {
     }, [chartData]);
 
     return (
-        <div className="rounded-2xl bg-blue-900/50 backdrop-blur-lg border border-slate-700/50">
+        <div className="rounded-2xl bg-blue-900/50 backdrop-blur-lg border border-slate-700/50 w-full">
             <div className="p-4 md:p-6 space-y-6">
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-4">
@@ -81,9 +81,9 @@ const BillChart = () => {
                 </div>
 
                 {/* Chart Section */}
-                <div className="h-[300px] md:h-[400px] w-full">
+                <div className= "h-[350px] md:h-[400px] w-auto">
                     <ResponsiveContainer width="100%" height="100%">
-                        {/* <AreaChart
+                        <AreaChart
                             data={chartData}
                             margin={{ top: 10, right: 30, left: 10, bottom: 5 }}
                         >
@@ -143,73 +143,9 @@ const BillChart = () => {
                                     strokeWidth: 2
                                 }}
                             />
-                        </AreaChart> */}
+                        </AreaChart>
 
-<LineChart
-      data={chartData}
-      margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
-    >
-      {/* Gradient for Line */}
-      <defs>
-        <linearGradient id="colorLine" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="5%" stopColor="#38bdf8" stopOpacity={0.8} />
-          <stop offset="95%" stopColor="#38bdf8" stopOpacity={0.1} />
-        </linearGradient>
-      </defs>
 
-      {/* Grid */}
-      <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
-
-      {/* X-Axis */}
-      <XAxis
-        dataKey="date"
-        stroke="#94a3b8"
-        tick={{ fill: '#94a3b8', fontSize: 12 }}
-        tickLine={false}
-        axisLine={{ stroke: '#334155' }}
-        tickMargin={10}
-      />
-
-      {/* Y-Axis */}
-      <YAxis
-        stroke="#94a3b8"
-        tick={{ fill: '#94a3b8', fontSize: 12 }}
-        tickFormatter={(value) => `${value} $`}
-        tickLine={false}
-        axisLine={{ stroke: '#334155' }}
-        width={60}
-      />
-
-      {/* Tooltip */}
-      <Tooltip
-        contentStyle={{
-          backgroundColor: '#1e293b',
-          border: '1px solid #334155',
-          borderRadius: '8px',
-          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
-          padding: '12px',
-        }}
-        itemStyle={{ color: '#e2e8f0', fontSize: '12px' }}
-        labelStyle={{ color: '#94a3b8', marginBottom: '8px', fontSize: '12px' }}
-        formatter={(value) => [`${value}`, 'Amount']}
-        labelFormatter={(label) => `Date: ${label}`}
-      />
-
-      {/* Line */}
-      <Line
-        type="monotone"
-        dataKey="amount"
-        stroke="#38bdf8"
-        strokeWidth={2}
-        dot={{ fill: '#38bdf8', r: 5 }}
-        activeDot={{
-          r: 8,
-          fill: '#38bdf8',
-          stroke: '#0c4a6e',
-          strokeWidth: 2,
-        }}
-      />
-    </LineChart>
 
                     </ResponsiveContainer>
                 </div>
