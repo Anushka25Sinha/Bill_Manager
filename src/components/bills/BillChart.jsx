@@ -64,18 +64,7 @@ const BillChart = () => {
 
                     {/* Stats Section */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full md:w-auto">
-                        <div className="bg-red-700/50 rounded-lg p-3">
-                            <p className="text-xs text-slate-400">Highest Spend</p>
-                            <p className="text-base md:text-lg font-semibold text-slate-200">
-                                {formatCurrency(maxAmount)}
-                            </p>
-                        </div>
-                        <div className="bg-green-700/50 rounded-lg p-3">
-                            <p className="text-xs text-slate-400">Lowest Spend</p>
-                            <p className="text-base md:text-lg font-semibold text-slate-200">
-                                {formatCurrency(minAmount)}
-                            </p>
-                        </div>
+                        
                         {/* <div className="bg-slate-700/20 rounded-lg p-3 col-span-2 md:col-span-1">
                             <p className="text-xs text-slate-400">Trend</p>
                             <p className={`text-base md:text-lg font-semibold flex items-center gap-1 
